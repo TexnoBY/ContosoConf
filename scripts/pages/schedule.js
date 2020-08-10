@@ -82,6 +82,8 @@
 ];
 
 const lst = document.getElementById("schedule");
+const track1CheckBox = document.getElementById("show-track-1")
+const track2CheckBox = document.getElementById("show-track-2")
 
 function createSessionElement(session) {
     const li = document.createElement("li");
@@ -100,9 +102,17 @@ function displaySchedule() {
     clearList();
     
     for (let item of schedule) {
-        const li = createSessionElement(item);
-        lst.appendChild(li);
+        const tracks = item.tracks;
+        const isCurrentTrack = (track1CheckBox.checked && tracks.indexOf(1) >= 0) ||
+                                 (track2CheckBox.checked && tracks.indexOf(2) >= 0);
+        if (isCurrentTrack){
+            const li = createSessionElement(item);
+            lst.appendChild(li);
+        }
     }
 }
 
 displaySchedule();
+track1CheckBox.addEventListener("click", displaySchedule, false);
+track2CheckBox.addEventListener("click", displaySchedule, false);
+
