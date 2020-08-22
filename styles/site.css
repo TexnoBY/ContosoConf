@@ -17,9 +17,16 @@ nav {
 
 }
 
-nav.a {
+nav a {
   color: #fff;
   padding: 1rem;
+  text-decoration: none;
+  opacity: .75;
+  transition: opacity .1s linear;
+}
+
+nav a:hover {
+  opacity: 1 
 }
 
 h1 {
