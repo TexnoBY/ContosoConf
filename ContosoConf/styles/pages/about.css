@@ -1,0 +1,42 @@
+.about > article > section {
+	column-count: 3;
+	column-gap: 5rem;
+	text-align: justify;
+}
+
+.about p:first-child:first-letter {
+	font-size: 300%;
+	float: left;
+	color: #aaa;
+	margin-top: -10px;
+	margin-bottom: -20px;
+}
+
+
+/* TODO: Indent paragraphs */
+.about p {
+    text-indent: 3rem;
+}
+
+.about p:first-child {
+
+    text-indent: 0;
+
+}
+
+.about blockquote {
+    font-size: 1.2em;
+    padding: 0 0 0 6rem;
+    margin: 0;
+    font-style: italic;
+    position: relative;
+}
+
+.about blockquote:before {
+    content: '\201C';
+    position: absolute;
+    font-size: 10rem;
+    font-family: serif;
+    left: 0;
+    top: -35px;
+}
